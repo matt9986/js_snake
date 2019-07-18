@@ -2,7 +2,10 @@ const path = require('path');
 
 module.exports = {
   mode: "production",
-  entry: './src/index.js',
+  entry: {
+    canvas_game: './src/start_canvas.js',
+    favicon_game: './src/start_favicon.js'
+  },
   module: {
     rules: [
       {
@@ -15,7 +18,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   }
 };
