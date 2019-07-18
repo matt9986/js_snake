@@ -1,0 +1,27 @@
+{
+  "name": "js_snake",
+  "version": "1.0.0",
+  "description": "JS Snake",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt9986/js_snake.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matt9986/js_snake/issues"
+  },
+  "homepage": "https://github.com/matt9986/js_snake#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6"
+  }
+}
