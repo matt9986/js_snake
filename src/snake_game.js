@@ -57,7 +57,8 @@ export function snake_game(display) {
     snake: []
   }
   document.onkeydown = event => {
-    game.last_key = event.keyCode;
+    document.onkeydown = event => game.last_key = event.keyCode;
+    play(game);
   };
 
   let mid_y = Math.floor(game.max_y / 2);
@@ -66,7 +67,5 @@ export function snake_game(display) {
   game.snake = [[mid_x, mid_y], [mid_x, mid_y], [mid_x, mid_y], [mid_x, mid_y]];
 
   display.render(game);
-
-  play(game);
 }
   
