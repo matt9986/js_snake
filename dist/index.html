@@ -4,9 +4,11 @@
     <title>Getting Started</title>
     <meta charset="UTF-8">
     <script src="https://unpkg.com/lodash@4.16.6"></script>
+    <script src="js_snake.js"></script>
   </head>
   <body>
+    <button onclick="JsSnake.SnakeGame.snake_game(new JsSnake.FaviconDisplay.FaviconDisplay(document))">Favicon Me!</button>
+    <button onclick="JsSnake.SnakeGame.snake_game(new JsSnake.CanvasDisplay.CanvasDisplay(document.getElementById('snake-game-target')))">Canvas Me!</button>
     <canvas id="snake-game-target"></canvas>
-    <script src="canvas_game.js"></script>
   </body>
 </html>
