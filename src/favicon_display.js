@@ -17,7 +17,10 @@ export class FaviconDisplay {
     }
   
     lost(game) {
-      this.canvas_display.lost(game);
+      this.canvas_display.ctx.font = "11px 'Arial Unicode MS'";
+      this.canvas_display.ctx.fillText("💀",
+                      0,
+                      11)
       this.favicon.href = this.canvas_display.ctx.canvas.toDataURL('image/png');
     }
   
