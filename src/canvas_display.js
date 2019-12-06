@@ -8,7 +8,7 @@ export class CanvasDisplay {
   render(game) {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
     this.ctx.lineWidth = this.border_size;
-    this.ctx.strokeStyle = 'black';
+    this.ctx.strokeStyle = 'gray';
     this.ctx.strokeRect(0, 0, this.max_x() * this.size, this.max_y() * this.size);
     this.draw_square(game.apple, "red");
     game.snake.map(point => this.draw_square(point, "black"))
