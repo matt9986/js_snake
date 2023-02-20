@@ -1,12 +1,10 @@
 export const curry = fn => {
-  var arity = fn.length;
+  let arity = fn.length;
 
-  return (function resolver() {
-    var mem = Array.prototype.slice.call( arguments );
-    return function() {
-      var args = mem.slice();
-      Array.prototype.push.apply( args, arguments );
+  return (function resolver(...args) {
+    return function(...more_args) {
+      Array.prototype.push.apply( args, more_args );
       return ( args.length >= arity ? fn : resolver ).apply( null, args );
     };
   }());
-}
+};
