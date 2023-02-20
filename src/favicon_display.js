@@ -12,6 +12,7 @@ export class FaviconDisplay {
     }
   
     render(game) {
+      this.canvas_display.snake_color = this.snake_color();
       this.canvas_display.render(game);
       this.favicon.href = this.canvas_display.ctx.canvas.toDataURL('image/png');
     }
@@ -46,5 +47,13 @@ export class FaviconDisplay {
       link.href = canvas.toDataURL("image/x-icon");
       document.getElementsByTagName('head')[0].appendChild(link);
       return link;
+    }
+
+    snake_color() {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return "white";
+      } else {
+        return "black";
+      }
     }
 }
