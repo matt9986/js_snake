@@ -9,11 +9,11 @@ const interval = 100;
 
 function play(game) {
   // check for input
-  if (game.last_key == '37') {
+  if (game.last_key == "ArrowLeft") {
     // left
     game.current_move_index = game.current_move_index == moves.length - 1 ? 0 : game.current_move_index + 1;
   }
-  if (game.last_key == '39') {
+  if (game.last_key == "ArrowRight") {
     // right
     game.current_move_index = game.current_move_index == 0 ? moves.length - 1 : game.current_move_index - 1;
   }
@@ -57,7 +57,7 @@ export function snake_game(display) {
     snake: []
   }
   document.onkeydown = event => {
-    document.onkeydown = event => game.last_key = event.keyCode;
+    document.onkeydown = event => game.last_key = event.key;
     play(game);
   };
 
