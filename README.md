@@ -1,5 +1,5 @@
 # js_snake
-Quick JS snake game
+Quick JS snake game that can be run either in a page's favicon or in a canvas element on the page.
 
 Did I need npm/webpack/babel? Probably not.
 
@@ -20,5 +20,6 @@ JsSnake.SnakeGame.snake_game(new JsSnake.CanvasDisplay.CanvasDisplay(document.ge
 1. Clone the repo
 1. Run `npm install`
 1. Hack some
+1. Run `npm test`
 1. Run `npm run build`
 1. Open index.html in your browser and test your changes
