@@ -3,8 +3,8 @@ export const curry = fn => {
 
   return (function resolver(...args) {
     return function(...more_args) {
-      Array.prototype.push.apply( args, more_args );
-      return ( args.length >= arity ? fn : resolver ).apply( null, args );
+      const new_args = args.concat(more_args);
+      return ( new_args.length >= arity ? fn : resolver ).apply( null, new_args );
     };
   }());
 };

@@ -22,7 +22,8 @@ function play(game) {
   game.snake = moves[game.current_move_index](game.snake);
   // check for noms
   let head = game.snake[0];
-  if (point_collision(head, game.apple)) {
+  const head_check = curry(point_collision)(head);
+  if (head_check(game.apple)) {
     game.snake.push([...game.snake.slice(-1)[0]]);
     game.apple = apple_generator(game.max_x, game.max_y);
   }
@@ -31,7 +32,7 @@ function play(game) {
     return lost(game);
   }
   // check for snake/snake collision
-  if (game.snake.slice(1).some(curry(point_collision)(head))) {
+  if (game.snake.slice(1).some(head_check)) {
     return lost(game);
   }
   // Render the move
